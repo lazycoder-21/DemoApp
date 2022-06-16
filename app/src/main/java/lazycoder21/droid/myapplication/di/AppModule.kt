@@ -43,11 +43,7 @@ object AppModule {
             .client(okHttpClient)
             .baseUrl(MyApi.BASE_URL)
             .addConverterFactory(
-                GsonConverterFactory.create(
-                    GsonBuilder()
-                        .registerTypeAdapter(UsersDto::class.java, MyDeserializer())
-                        .create()
-                )
+                GsonConverterFactory.create()
             )
             .build()
             .create()
