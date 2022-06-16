@@ -27,7 +27,6 @@ object AppModule {
     fun provideUserRepo(api: MyApi): UsersRepository = UserRepositoryImpl(api)
 
 
-    //todo add type factory for conversion
     @Provides
     @Singleton
     fun provideMyApi(
