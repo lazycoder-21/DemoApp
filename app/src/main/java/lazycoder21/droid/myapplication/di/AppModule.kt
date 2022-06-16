@@ -1,10 +1,13 @@
 package lazycoder21.droid.myapplication.di
 
+import com.google.gson.GsonBuilder
+import com.google.gson.TypeAdapter
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import lazycoder21.droid.myapplication.data.remote.MyApi
+import lazycoder21.droid.myapplication.data.remote.dto.UsersDto
 import lazycoder21.droid.myapplication.data.repository.UserRepositoryImpl
 import lazycoder21.droid.myapplication.domain.repository.UsersRepository
 import retrofit2.Retrofit
@@ -18,9 +21,10 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideUserRepo(api: MyApi) : UsersRepository = UserRepositoryImpl(api)
+    fun provideUserRepo(api: MyApi): UsersRepository = UserRepositoryImpl(api)
 
 
+    //todo add type factory for conversion
     @Provides
     @Singleton
     fun provideMyApi(): MyApi =

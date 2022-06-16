@@ -7,11 +7,11 @@ import retrofit2.http.Query
 
 interface MyApi {
 
-    @GET("/users")
+    @GET("users")
     fun getUsers(@Query(PAGE) page: Int): Response<UsersDto>
 
     companion object {
-        const val BASE_URL = "https://reqres.in/api"
+        const val BASE_URL = "https://reqres.in/api/"
         private const val PAGE = "page"
     }
 }
