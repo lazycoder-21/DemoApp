@@ -13,7 +13,7 @@ class UserRepositoryImpl(
 
     override suspend fun getUsers(pageNo: Int): Resource<Users> {
         try {
-            val users = api.getUsers(page = pageNo)
+            val users = api.getUsers(page = pageNo.toString())
             if (users.isSuccessful && users.body() != null) {
                 return Resource.Success(users.body()!!.mapToUsers())
             } else {

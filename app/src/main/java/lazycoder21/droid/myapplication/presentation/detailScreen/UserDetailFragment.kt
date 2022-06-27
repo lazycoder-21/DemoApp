@@ -17,7 +17,9 @@ const val ARG_DATA = "data"
 
 class UserDetailFragment : Fragment() {
 
-    private val sharedViewModel = ViewModelProvider(requireActivity())[SharedViewModel::class.java]
+    private val sharedViewModel by lazy {
+        ViewModelProvider(requireActivity())[SharedViewModel::class.java]
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
